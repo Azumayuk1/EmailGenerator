@@ -13,10 +13,10 @@ namespace EmailGenerator
     public partial class Form1 : Form
     {
         public static Random random = new Random();// RANDOM
-        public Form1() {InitializeComponent();}
-        private void label1_Click(object sender, EventArgs e){}//игнорируем
+        public Form1() { InitializeComponent(); }
+        private void label1_Click(object sender, EventArgs e) { }//игнорируем
 
-        
+
         public static string genName()// генерирует название ящика
         {
             string name_func = "";
@@ -34,7 +34,7 @@ namespace EmailGenerator
         }
         public string genSecondDomain()// генерирунт домен второго уровня
         {
-            if (Checkbox_defaultdomain.Checked == true) 
+            if (Checkbox_defaultdomain.Checked == true)
             { return Default_SecondLevelDomain.Text; }
             string name_second_domain = "";
             string sogl = "qwrtpsdfghjklzxcvbnm";
@@ -49,7 +49,7 @@ namespace EmailGenerator
             }
             return name_second_domain;
         }
-        public  string genFirstDomain()// генерирует домен первого уровня
+        public string genFirstDomain()// генерирует домен первого уровня
         {
             if (Checkbox_defaultdomain.Checked == true)
             { return default_FirstLeveldomain.Text; }
@@ -62,7 +62,7 @@ namespace EmailGenerator
             return name_first_domain;
         }
 
-        public  string genFullEmail()// генерирует полный адрес
+        public string genFullEmail()// генерирует полный адрес
         {
             string full_email = $"{genName()}@{genSecondDomain()}.{genFirstDomain()}\n";
             return full_email;
@@ -79,7 +79,8 @@ namespace EmailGenerator
             return password_mail;
         }
 
-        private void btn_GenerateEmails_Click(object sender, EventArgs e)
+       
+private void btn_GenerateEmails_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < Convert.ToInt32(EmailsNumText.Text); i++) 
             { 
